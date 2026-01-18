@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariage Anaïs & Baptiste - 20 Juin 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #c4b5a0 0%, #a89f8f 100%);
+            font-family: 'Cormorant Garamond', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* Carte avec ombre blanche */
+        .outer-card {
+            background: white;
+            padding: 15px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* Carte intérieure avec bordure dorée */
+        .inner-card {
+            background: #f9f7f5;
+            border: 2px solid #c9b896;
+            padding: 50px 40px;
+            position: relative;
+            text-align: center;
+        }
+
+        /* Guirlande de gypsophile en arc */
+        .floral-arch {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .arch-svg {
+            width: 100%;
+            max-width: 500px;
+            height: 100px;
+        }
+
+        /* Texte introduction */
+        .intro-text {
+            font-size: 16px;
+            color: #8a8a7a;
+            margin-bottom: 25px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* Prénoms en italique */
+        .couple-names {
+            color: #5d7a5d;
+            margin-bottom: 5px;
+        }
+
+        .first-name {
+            font-size: 72px;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1;
+            display: block;
+        }
+
+        .ampersand {
+            font-size: 36px;
+            font-style: italic;
+            color: #5d7a5d;
+            margin: 5px 0;
+            display: block;
+        }
+
+        .second-name {
+            font-size: 72px;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1;
+            display: block;
+        }
+
+        /* Séparateur avec point */
+        .separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 25px 0;
+        }
+
+        .separator::before,
+        .separator::after {
+            content: '';
+            width: 80px;
+            height: 1px;
+            background: #a89f8f;
+        }
+
+        .separator-dot {
+            width: 8px;
+            height: 8px;
+            background: #5d7a5d;
+            border-radius: 50%;
+            margin: 0 15px;
+        }
+
+        /* Détails événement */
+        .event-details {
+            color: #6a6a5a;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .event-intro {
+            font-size: 17px;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .event-date {
+            font-size: 22px;
+            font-style: italic;
+            font-weight: 500;
+            color: #4a4a3a;
+            margin: 8px 0;
+        }
+
+        .event-time {
+            font-size: 16px;
+            font-style: italic;
+            color: #7a7a6a;
+            margin-bottom: 20px;
+        }
+
+        .event-location {
+            font-size: 17px;
+            font-style: italic;
+            color: #6a6a5a;
+            line-height: 1.6;
+        }
+
+        /* RSVP */
+        .rsvp-text {
+            font-size: 15px;
+            font-style: italic;
+            color: #7a7a6a;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        /* QR Code */
+        .qr-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .qr-box {
+            width: 90px;
+            height: 90px;
+            border: 2px dashed #b5a890;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            padding: 8px;
+        }
+
+        .qr-label {
+            font-size: 13px;
+            color: #8a8a7a;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .outer-card {
+                padding: 12px;
+            }
+            
+            .inner-card {
+                padding: 40px 25px;
+            }
+            
+            .first-name,
+            .second-name {
+                font-size: 56px;
+            }
+            
+            .ampersand {
+                font-size: 30px;
+            }
+            
+            .event-date {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .first-name,
+            .second-name {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="outer-card">
+        <article class="inner-card">
+            
+            <!-- Arc floral de gypsophile -->
+            <div class="floral-arch">
+                <svg class="arch-svg" viewBox="0 0 500 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Arc principal -->
+                    <path d="M 50 90 Q 250 10 450 90" fill="none" stroke="#a8b89f" stroke-width="1.5" opacity="0.7"/>
+                    
+                    <!-- Branches de gauche -->
+                    <g stroke="#8a9d82" stroke-width="0.8" fill="none" opacity="0.6">
+                        <path d="M 80 85 Q 70 75 65 65"/>
+                        <path d="M 100 70 Q 90 60 82 50"/>
+                        <path d="M 120 55 Q 110 45 102 35"/>
+                        <path d="M 140 42 Q 130 32 122 22"/>
+                        <path d="M 160 32 Q 150 25 142 18"/>
+                    </g>
+                    
+                    <!-- Branches de droite -->
+                    <g stroke="#8a9d82" stroke-width="0.8" fill="none" opacity="0.6">
+                        <path d="M 420 85 Q 430 75 435 65"/>
+                        <path d="M 400 70 Q 410 60 418 50"/>
+                        <path d="M 380 55 Q 390 45 398 35"/>
+                        <path d="M 360 42 Q 370 32 378 22"/>
+                        <path d="M 340 32 Q 350 25 358 18"/>
+                    </g>
+                    
+                    <!-- Branches centrales supérieures -->
+                    <g stroke="#8a9d82" stroke-width="0.8" fill="none" opacity="0.6">
+                        <path d="M 220 30 Q 210 22 205 15"/>
+                        <path d="M 250 20 Q 250 12 250 5"/>
+                        <path d="M 280 30 Q 290 22 295 15"/>
+                    </g>
+                    
+                    <!-- Petites fleurs blanches -->
+                    <g>
+                        <circle cx="65" cy="65" r="3" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5"/>
+                        <circle cx="82" cy="50" r="2.5" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5"/>
+                        <circle cx="102" cy="35" r="3" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5"/>
+                        <circle cx="122" cy="22" r="2.5" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5"/>
+                        <circle cx="142" cy="18" r="2" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5"/>
+                        <circle cx="180" cy="25" r="2.5" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5"/>
+                        <circle cx="205" cy="15" r="2" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5"/>
+                        <circle cx="250" cy="5" r="3" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5"/>
+                        <circle cx="295" cy="15" r="2" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5"/>
+                        <circle cx="320" cy="25" r="2.5" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5"/>
+                        <circle cx="358" cy="18" r="2" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5"/>
+                        <circle cx="378" cy="22" r="2.5" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5"/>
+                        <circle cx="398" cy="35" r="3" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5"/>
+                        <circle cx="418" cy="50" r="2.5" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5"/>
+                        <circle cx="435" cy="65" r="3" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5"/>
+                    </g>
+                    
+                    <!-- Fleurs plus petites -->
+                    <g>
+                        <circle cx="90" cy="78" r="2" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5" opacity="0.8"/>
+                        <circle cx="110" cy="62" r="1.8" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5" opacity="0.8"/>
+                        <circle cx="130" cy="48" r="2" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5" opacity="0.8"/>
+                        <circle cx="150" cy="35" r="1.8" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5" opacity="0.8"/>
+                        <circle cx="190" cy="32" r="2" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5" opacity="0.8"/>
+                        <circle cx="230" cy="18" r="1.8" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5" opacity="0.8"/>
+                        <circle cx="270" cy="18" r="1.8" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5" opacity="0.8"/>
+                        <circle cx="310" cy="32" r="2" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5" opacity="0.8"/>
+                        <circle cx="350" cy="35" r="1.8" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5" opacity="0.8"/>
+                        <circle cx="370" cy="48" r="2" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5" opacity="0.8"/>
+                        <circle cx="390" cy="62" r="1.8" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5" opacity="0.8"/>
+                        <circle cx="410" cy="78" r="2" fill="#f5f5f0" stroke="#d0d5c8" stroke-width="0.5" opacity="0.8"/>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Texte introduction -->
+            <p class="intro-text">La joie de vous annoncer</p>
+
+            <!-- Prénoms -->
+            <div class="couple-names">
+                <span class="first-name">Anaïs</span>
+                <span class="ampersand">&</span>
+                <span class="second-name">Baptiste</span>
+            </div>
+
+            <!-- Séparateur -->
+            <div class="separator">
+                <span class="separator-dot"></span>
+            </div>
+
+            <!-- Détails de l'événement -->
+            <div class="event-details">
+                <p class="event-intro">Se diront « Oui » le</p>
+                <p class="event-date">Samedi 20 Juin 2026</p>
+                <p class="event-time">à 14 heures</p>
+                
+                <div class="event-location">
+                    Chapelle Sainte-Thérèse<br>
+                    Les Mayens-de-la-Zour
+                </div>
+            </div>
+
+            <!-- RSVP -->
+            <p class="rsvp-text">Réponse souhaitée avant le 30 mars</p>
+
+            <!-- QR Code -->
+            <div class="qr-container">
+                <div class="qr-box">
+                    <svg width="70" height="70" viewBox="0 0 24 24" fill="#5a5a5a">
+                        <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm13-2h3v2h-3v-2zm-3 0h2v2h-2v-2zm3 3h3v2h-3v-2zm-3 0h2v2h-2v-2zm3 3h3v2h-3v-2zm-3 0h2v2h-2v-2z"/>
+                    </svg>
+                </div>
+                <p class="qr-label">QR Code à scanner</p>
+            </div>
+
+        </article>
+    </div>
+
+</body>
+</html>
