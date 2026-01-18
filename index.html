@@ -3,218 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mariage Anaïs & Baptiste - Inspiration Lin & Gypsophile</title>
+    <title>Mariage Anaïs & Baptiste</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --color-lin: #f2ede4;
-            --color-sage: #7a8a71;
+            --color-lin: #fdfaf5;
+            --color-sage: #6d7a61;
+            --color-gold: #c5bba7;
             --color-text: #4a4a4a;
-            --color-accent: #c5bba7;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: #e5e0d8;
-            /* Simulation texture lin avec un filtre de bruit SVG */
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            /* Texture lin subtile */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
             font-family: 'Cormorant Garamond', serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 40px 20px;
-            color: var(--color-text);
+            padding: 20px;
         }
 
-        /* La Carte */
-        .card {
+        .invitation {
             background-color: var(--color-lin);
-            max-width: 550px;
+            max-width: 600px;
             width: 100%;
-            padding: 60px;
+            padding: 80px 40px;
             position: relative;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
             text-align: center;
             border: 1px solid rgba(0,0,0,0.05);
         }
 
-        /* Bordure intérieure stylisée */
-        .card::after {
+        /* Double bordure élégante */
+        .invitation::after {
             content: '';
             position: absolute;
-            top: 20px; left: 20px; right: 20px; bottom: 20px;
-            border: 1px solid var(--color-accent);
+            top: 25px; left: 25px; right: 25px; bottom: 25px;
+            border: 1px solid var(--color-gold);
             pointer-events: none;
-            opacity: 0.5;
+            opacity: 0.6;
         }
 
-        /* Gypsophile Illustration */
-        .gypso-container {
+        /* Arche de Gypsophile en SVG */
+        .header-illustration {
             width: 100%;
-            height: 120px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
+            max-width: 350px;
+            margin: 0 auto 30px auto;
         }
 
-        .gypso-svg {
-            height: 100%;
-            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.05));
-        }
-
-        /* Typographies */
-        .intro {
+        .intro-text {
             text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.85rem;
+            letter-spacing: 4px;
+            font-size: 14px;
             color: var(--color-sage);
-            margin-bottom: 20px;
-            font-weight: 500;
+            margin-bottom: 10px;
         }
 
         .names {
             font-family: 'Pinyon Script', cursive;
-            font-size: 4.5rem;
+            font-size: clamp(3rem, 10vw, 5rem);
             color: var(--color-sage);
             margin: 10px 0 30px 0;
-            line-height: 1;
+            line-height: 1.1;
         }
 
         .divider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 30px 0;
-        }
-
-        .divider::before, .divider::after {
-            content: '';
-            width: 40px;
             height: 1px;
-            background: var(--color-accent);
+            width: 80px;
+            background: var(--color-gold);
+            margin: 20px auto;
+            position: relative;
         }
-
-        .divider-dot {
-            width: 6px;
-            height: 6px;
-            background: var(--color-sage);
-            border-radius: 50%;
-            margin: 0 15px;
-            opacity: 0.6;
-        }
-
-        .details {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 40px;
-        }
-
-        .details b {
-            font-weight: 600;
-            color: #000;
-        }
-
-        .location {
-            font-style: italic;
-            margin-top: 15px;
-            display: block;
-            color: #666;
-        }
-
-        .footer {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(197, 187, 167, 0.3);
-        }
-
-        .rsvp {
-            font-size: 0.9rem;
-            margin-bottom: 20px;
+        .divider::after {
+            content: '✻';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-lin);
+            padding: 0 10px;
             color: var(--color-sage);
         }
 
-        .qr-placeholder {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto;
-            border: 1px solid var(--color-accent);
-            padding: 5px;
-            background: white;
+        .ceremony-info {
+            font-size: 22px;
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+
+        .ceremony-info b {
+            font-weight: 600;
+            display: block;
+            font-size: 26px;
+            margin: 5px 0;
+        }
+
+        .location {
+            margin-top: 25px;
+            font-style: italic;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .rsvp-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(197, 187, 167, 0.2);
+            font-size: 16px;
+            color: var(--color-sage);
+        }
+
+        /* Petit QR Code stylisé */
+        .qr-area {
+            margin: 20px auto 0;
+            width: 70px;
+            height: 70px;
+            border: 1px dashed var(--color-gold);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 10px;
-            color: #ccc;
-            text-transform: uppercase;
+            opacity: 0.7;
         }
 
-        /* Responsive */
         @media (max-width: 480px) {
-            .card { padding: 40px 25px; }
-            .names { font-size: 3.2rem; }
-            .details { font-size: 1.1rem; }
+            .invitation { padding: 50px 25px; }
+            .names { font-size: 3.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <article class="card">
-        <div class="gypso-container">
-            <svg class="gypso-svg" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
-                <g fill="none" stroke="#90a088" stroke-width="0.8">
-                    <path d="M100,110 C100,80 80,60 70,40" />
-                    <path d="M100,110 C100,80 120,60 130,40" />
-                    <path d="M100,110 C105,70 105,40 100,20" />
-                    <circle cx="70" cy="40" r="2" fill="white" stroke="#e0e0e0"/>
-                    <circle cx="65" cy="35" r="1.5" fill="white" stroke="#e0e0e0"/>
-                    <circle cx="130" cy="40" r="2" fill="white" stroke="#e0e0e0"/>
-                    <circle cx="135" cy="45" r="1.5" fill="white" stroke="#e0e0e0"/>
-                    <circle cx="100" cy="20" r="2" fill="white" stroke="#e0e0e0"/>
-                    <circle cx="95" cy="15" r="1" fill="white" stroke="#e0e0e0"/>
-                    <circle cx="110" cy="35" r="1.5" fill="white" stroke="#e0e0e0"/>
-                    <circle cx="85" cy="50" r="1.8" fill="white" stroke="#e0e0e0"/>
+    <main class="invitation">
+        <div class="header-illustration">
+            <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20,70 Q100,-20 180,70" fill="none" stroke="#8a9a7b" stroke-width="0.5" opacity="0.4"/>
+                <g fill="white" stroke="#8a9a7b" stroke-width="0.2">
+                    <circle cx="100" cy="15" r="2" /> <circle cx="110" cy="18" r="1.5" />
+                    <circle cx="90" cy="18" r="1.5" /> <circle cx="125" cy="25" r="2" />
+                    <circle cx="75" cy="25" r="2" /> <circle cx="145" cy="38" r="1.5" />
+                    <circle cx="55" cy="38" r="1.5" /> <circle cx="165" cy="55" r="2" />
+                    <circle cx="35" cy="55" r="2" />
                 </g>
             </svg>
         </div>
 
-        <p class="intro">La joie de vous annoncer</p>
+        <p class="intro-text">La joie de vous annoncer que</p>
         
         <h1 class="names">Anaïs & Baptiste</h1>
 
-        <div class="divider">
-            <span class="divider-dot"></span>
-        </div>
+        <div class="divider"></div>
 
-        <div class="details">
-            <p>Se diront "Oui" le</p>
-            <p><b>Samedi 20 Juin 2026</b></p>
-            <p>à 14 heures</p>
+        <div class="ceremony-info">
+            se diront "Oui" le<br>
+            <b>Samedi 20 Juin 2026</b><br>
+            à 14 heures
             
-            <span class="location">
+            <p class="location">
                 Chapelle Sainte-Thérèse<br>
                 Les Mayens-de-la-Zour
-            </span>
+            </p>
         </div>
 
-        <div class="footer">
-            <p class="rsvp">Réponse souhaitée avant le 30 mars</p>
-            
-            <div class="qr-placeholder">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="#eee">
-                    <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm13-2h3v2h-3v-2zm-3 0h2v2h-2v-2zm3 3h3v2h-3v-2zm-3 0h2v2h-2v-2zm3 3h3v2h-3v-2zm-3 0h2v2h-2v-2z"/>
+        <footer class="rsvp-section">
+            <p>Réponse souhaitée avant le 30 mars 2026</p>
+            <div class="qr-area">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="#c5bba7">
+                    <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5z"/>
                 </svg>
             </div>
-        </div>
-    </article>
+        </footer>
+    </main>
 
 </body>
 </html>
